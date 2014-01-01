@@ -8,7 +8,13 @@ Hong Kong learnt from the British to be fascinated by the weather, or at least t
 
 However, excitement sets in around December time, when the weather actually becomes appreciably colder. As soon as the temperature hits 14°C (around 57°F for those who boil blood instead of water) the majestic Hong Kong Observatory announces, chest puffed out and up with self-appointed importance, that a ["Cold Weather Warning"](http://www.hko.gov.hk/wservice/warning/coldhot.htm) is in place. At such an extreme temperature, the Observatory intones over every available communication channel, that "If you must go out, avoid prolonged exposure to wintry winds", and other concerned bromides. Most of the populace duly follows by wearing at least three layers, with those of European extraction bucking the fashion and continuing to wear T-shirts and shorts, flaunting their hairiness and giggling over the locals' overly sensible nature. They then catch colds, at best.
 
-The aforementioned majestic Hong Kong Observatory titillates the hibernating population with stories of **frost**. It presents, ostensibly in a sensible fashion, [historical records of how many days in previous years Hong Kong experienced this extreme weather condition](http://www.hko.gov.hk/cis/statistic/frost_statistic_e.htm). (There are also tales of something called **snow**, but no-one really believes them). I've taken the data and drawn better graphs than those provided by the regal HKO. Feel free to suggest how I could improve them further or make other ones with this data.
+The aforementioned majestic Hong Kong Observatory titillates the hibernating population with stories of **frost**. It presents, ostensibly in a sensible fashion, [historical records of how many days in previous years Hong Kong experienced this extreme weather condition](http://www.hko.gov.hk/cis/statistic/frost_statistic_e.htm). (There are also tales of something called [**snow**](http://www.hko.gov.hk/education/edu01met/wxobs/ele_snow_e.htm), but no-one really believes them). I've taken the data and drawn better graphs than those provided by the regal HKO. 
+
+[My version of the data is somewhere here](https://raw.github.com/slygent/dataguruhk/master/frost/frost.tsv).
+
+Feel free to suggest how I could improve the graphs further or make other ones with this data. You could also tell me what you think of my Markdown skills, the ruder the better.
+
+First up is the number of days with "reported" frost every year. I hope the reports are validated, otherwise we might get false frost reports from overexcited frostophiles imagining things.
 
 
 
@@ -86,12 +92,16 @@ frost <- data.table(melt(frost, id.vars = "Year"), key = "Year,variable")
 setnames(frost, c("year", "month", "frost"))
 frostbyyear <- frost[, list(frost = sum(frost)), by = year]
 frostbyyearplot <- ggplot(frostbyyear) + geom_line(aes(x = year, y = frost), 
-    size = 2) + labs(x = "Year", y = "Days with reported frost", title = "Days of reported frost in Hong Kong by year")
+    size = 2) + labs(x = "Year", y = "Days with reported frost", title = "Days of reported frost in Hong Kong by year") + 
+    scale_y_continuous(breaks = seq(0, 10, 1)) + scale_x_continuous(breaks = seq(1955, 
+    2010, 5))
 plot(frostbyyearplot)
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
 
+
+Let's agree to agree that there is no real trend there, eh?
 
 
 ```r
