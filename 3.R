@@ -1,0 +1,16 @@
+library(reshape2)
+library(ggplot2)
+library(data.table)
+library(scales)
+
+nation <- read.csv("3.csv")
+colnames(nation) <- c("nationality", "sex", "1996", "2001", "2006", "2011")
+nation <- melt(nation)
+colnames(nation)[3] <- "year"
+nation <- data.table(nation)
+setkey(nation, value)
+nation$nationality <- factor(nation$nationality, levels = rev(unique(nation[year == 2011 & sex == "F"]$nationality)))
+nationplot <- ggplot() + geom_line(data = nation, mapping = aes(x = year, y = value, group = nationality, colour = nationality), stat = "identity", position = "identity", size = 1) + labs(x = "Year", y = "Population") + scale_y_continuous(labels = comma) + facet_wrap(~ sex, scales = "fixed") + theme_bw()
+nationplotlog <- ggplot() + geom_line(data = nation, mapping = aes(x = year, y = value, group = nationality, colour = nationality), stat = "identity", position = "identity", size = 1) + labs(x = "Year", y = "Population") + scale_y_log10(labels = comma) + facet_wrap(~ sex, scales = "fixed") + theme_bw()
+nationplotnonhk <- ggplot() + geom_line(data = nation[nationality != "Hong Kong"], mapping = aes(x = year, y = value, group = nationality, colour = nationality), stat = "identity", position = "identity", size = 1) + labs(x = "Year", y = "Population") + scale_y_continuous(labels = comma) + facet_wrap(~ sex, scales = "fixed") + theme_bw()
+ggsave(filename = "nationplot.png", plot = nationplot)
