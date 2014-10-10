@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "First post test"
+date:   2013-03-22 11:18:00
+categories: blog
+---
+Testing, testing, like any good statistician would. And again.
