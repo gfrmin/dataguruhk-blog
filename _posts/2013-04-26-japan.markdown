@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Statistics Day in Japan"
+date:   2013-04-26 16:31:00
+categories: blog statistics
+---
+![Japan stats day](http://www.stat.go.jp/info/guide/img/178pos.jpg)
