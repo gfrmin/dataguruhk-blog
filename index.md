@@ -1,19 +1,26 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /
 ---
 
-![](/figs/thumb_gf.jpg)
+{:.pic-class width="20px"}
+![Guy Freeman](/figs/thumb_gf.jpg)
 
-My name is Guy Freeman. I have been in Hong Kong for over 3.5 years, working as a Post-Doctoral Fellow at the University of Hong Kong and then as an Analytical Engineer at DemystData. Now I'm looking for new opportunities while working on my own projects, as well as consulting for local businesses with data needs and teaching statistics and "data science".
+I am Guy Freeman. I have a PhD in Statistics from the University of Warwick, and have worked in both academia and business with different official titles each time, but basically I was a Data Guru.
 
-Please get in touch at [guy@dataguru.hk](mailto:guy@dataguru.hk) or fill in the form below if 
+Now, while working on my own projects in Hong Kong, I'm looking for new opportunities to 
 
-* you have data you need analysed
-* you want to collect new data in a smart way
-* you want to visualise or understand the data you have to make better decisions
+* consult for anyone with data needs
+* teaching statistics and "data science"
+
+So please get in touch at [guy@dataguru.hk](mailto:guy@dataguru.hk) or fill in the form below if 
+
+* you have data you want to analyse, understand and/or visualise to make better decisions
+* you want to collect and store new data in a smarter way
 * you want to learn R and/or other data analysis tools yourself
+
+I look forward to hearing from you.
 
 <form action="http://getsimpleform.com/messages?form_api_token=d1d19277a030ba33cade051e38ea135f" method="post">
   <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
