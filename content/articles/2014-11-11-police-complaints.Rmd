@@ -1,0 +1,67 @@
+Title: Complaints against police in Hong Kong rarely upheld
+Tags: hong kong, police
+
+```{r echo=FALSE}
+library(methods) 
+library(reshape2)
+library(ggplot2)
+library(data.table)
+library(scales)
+library(knitr)
+library(tidyr)
+library(printr)
+```
+
+Hong Kong has recently experienced some of the most severe protests in decades, taking place under the moniker of "Umbrella Revolution/Movement". (That calling the protests a "revolution" is considered too extreme by some protesters is testament to the pragmatic and mild nature of most of the protesters). These protests include "occupation" of some public roads in Hong Kong, at Admiralty, Mong Kok and Causeway Bay.
+
+One immediate trigger for the scale of these protests was the use by the local police of tear gas against peaceful protesters, [as can be seen in this video](https://www.youtube.com/watch?v=ZO6okfun90k).
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/ZO6okfun90k" frameborder="0" allowfullscreen></iframe>
+
+The police, previously holding a reputation as amongst the most professional in the world, lost more public trust [after some officers were allegedly caught on camera beating a protester on the ground](https://www.youtube.com/watch?v=P2aITGfN0qk).
+
+Hong Kong is still governed by the Rule of Law, though, and there are procedures (in theory) for making complaints against police misbehaviour. These complaints are ultimately overseen by the [Independent Police Complaints Council](http://www.ipcc.gov.hk/index.html), and they publish [statistics about the complaints](http://www.ipcc.gov.hk/en/statistics_nature.html). With the professionalism of the police at stake, I wanted to see whether complaints were treated fairly.
+
+Unfortunately the statistics at the above link are only for the years 2007 to 2009, and they are not granulated enough anyway (e.g. the don't show the results of complaints by type of complaint). Instead, one has to retrieve more recent statistics from the [annual reports](http://www.ipcc.gov.hk/en/reports_annual.html) available only in PDF format. But don't worry, I have parsed the figures out of the most recently published annual report for you... You can thank me later.
+
+The data are for 2011/2012 and 2012/2013, and you can get a cleaned version for yourself [here](../assets/police.csv). The numbers look like this for the latest reporting year 2012/2013:
+
+```{r echo=FALSE,warnings=FALSE,results='hide',messages=FALSE}
+police <- fread("../assets/police.csv")
+police <- police[!grep("total",Result)][`Major Category` != "All"][,!c("Total.2012/13","Total.2011/12"),with=FALSE]
+police <- gather(police, key, number, -Result, -`Major Category`)
+police <- separate(police, key, into=c("Complaint", "Year"), sep="\\.")
+police[,Result := factor(Result, levels = unique(police$Result))] # tidy
+police[,Complaint := factor(Complaint, levels = unique(police$Complaint))] # tidy more
+
+policetotals <- police[Year == "2012/13",sum(number),by=Result]
+policepresent <- copy(spread(police[Year == "2012/13"][,!c("Year","Major Category"),with=FALSE], Complaint, number))
+policepresent[,Total := policetotals$V1]
+policepresent <- rbind(policepresent, policepresent[,lapply(.SD, sum), .SDcols = 2:(ncol(policepresent))], fill = TRUE)
+policepresent[is.na(Result), Result := "Total"]
+```
+```{r echo=FALSE}
+policepresent
+```
+
+It is immediately clear that the vast majority of complaints are not substantiated. Regarding assault complaints in particular, out of 323 complaints only *one* was substantiated in part, and *none* substantiated in full. On the contrary, 273 of the complaints were withdrawn or considered not pursuable! Lastly, 15 were found to be _false_, so that it was considered "there is sufficient reliable evidence to indicate that the allegation made by the complainant is untrue, be it a complaint with clear malicious intent or a complaint which is not based upon genuine conviction or sincere belief but with no element of malice.  When a complaint is classified as “False”, CAPO will consider, in consultation with the Department of Justice as necessary, prosecuting the complainant for misleading a police officer", and 15 more led to a conclusion of "no fault", which means that "the complainant may have misunderstood the facts" or "the complainee was acting under lawful instructions from his superior officer or in accordance with established police practice." So 15 alleged assaults weren't really assaults, or the superior officer ordered the assault? I'm personally rather confused by this.
+
+The rarity of complaints being substantiated can be seen in the following two graphs, showing the absolute number and percentage of results for each type of the most complaints for years 2012/13 and 2012/11. It can be seen that assaults and threats are the complaints that are least likely to be substantiated, and most likely to be withdrawn or not pursued. 
+
+I hope this does not bode badly for the investigation currently underway into the [recent famous beating](https://www.youtube.com/watch?v=P2aITGfN0qk).
+
+```{r echo=FALSE,warnings=FALSE,results='hide',messages=FALSE}
+police <- fread("../assets/police.csv")
+setnames(police, sapply(names(police), function(x) {gsub("\\n", "\n", x, fixed=TRUE)}))
+police <- police[!grep("total",Result)][`Major Category` != "All"][,!c("Total.2012/13","Total.2011/12"),with=FALSE]
+police <- gather(police, key, number, -Result, -`Major Category`)
+police <- separate(police, key, into=c("Complaint", "Year"), sep="\\.")
+police[,Result := factor(Result, levels = unique(police$Result))] # tidy
+policeplot <- police[!(Complaint %in% c("Police Procedures", "Other\nOffences"))]
+```
+```{r echo=FALSE,fig.width=17,fig.height=17}
+ggplot(policeplot) + geom_bar(aes(x = Complaint, y = number, fill = Result), stat = "identity") + facet_wrap(~ Year) + ylab("Number")
+```
+```{r echo=FALSE,fig.width=17,fig.height=17}
+ggplot(policeplot) + geom_bar(aes(x = Complaint, y = number, fill = Result), stat = "identity", position = "fill") + facet_wrap(~ Year) + ylab("Proportion")
+```
