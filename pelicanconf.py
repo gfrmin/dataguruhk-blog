@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Guy Freeman'
 SITENAME = u'Hong Kong Data Guru'
-SITEURL = ''
+SITEURL = 'http://localhost:8000'
+SITELOGO = SITEURL + '/assets/favicon.jpeg'
 
 PATH = 'content'
 
@@ -20,15 +21,17 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('accessinfohk', 'http://accessinfo.hk/'),
+LINKS = (('accessinfo.hk', 'http://accessinfo.hk/'),
          ('webb-site.com', 'http://webb-site.com/'),)
 
 # Social widget
-SOCIAL = (('Twitter', 'http://twitter.com/dataguruhk'),
-('Facebook', 'http://facebook.com/dataguruhk'),
-('Github', 'http://github.com/slygent/dataguruhkpython'))
+SOCIAL = (('twitter', 'https://twitter.com/dataguruhk'),
+          ('facebook', 'https://facebook.com/dataguruhk'),
+          ('github', 'https://github.com/slygent/dataguruhk'),
+          ('rss', 'http://dataguru.hk/feeds/all.atom.xml')
+)
 
-DEFAULT_PAGINATION = False
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
@@ -44,3 +47,9 @@ RMD_READER_KNITR_OPTS_CHUNK = {'fig.path': 'assets/'}
 
 DEFAULT_CATEGORY = 'Blog'
 USE_FOLDER_AS_CATEGORY = False
+
+THEME = "theme/Flex"
+MAIN_MENU = True
+
+COPYRIGHT_YEAR = 2016
+CC_LICENSE = { 'name': 'Creative Commons Attribution-ShareAlike', 'version':'4.0', 'slug': 'by-sa' }

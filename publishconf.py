@@ -11,6 +11,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 SITEURL = 'http://dataguru.hk'
+SITELOGO = SITEURL + '/assets/favicon.jpeg'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -20,5 +21,6 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-DISQUS_SITENAME = "dataguruhk"
-GOOGLE_ANALYTICS = "UA-1155816-10"
+DISQUS_SITENAME = 'dataguruhk'
+GOOGLE_ANALYTICS = 'UA-1155816-10'
+ADD_THIS_ID = 'ra-51fd06c877d2ef07'
