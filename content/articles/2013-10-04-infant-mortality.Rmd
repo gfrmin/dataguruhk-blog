@@ -1,13 +1,14 @@
 Title: Hong Kong in graphs: Infant mortality rates by sex
 Tags: hong kong, graphs, population, infant mortality
----
 
 ```{r echo=FALSE}
+suppressPackageStartupMessages({
 library(methods) 
 library(reshape2)
 library(ggplot2)
 library(data.table)
 library(scales)
+})
 
 infmor <- read.csv("../assets/2.csv")
 infmor <- melt(infmor, id.vars = "year")
