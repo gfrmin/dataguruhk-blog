@@ -42,7 +42,7 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images', 'assets']
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['rmd_reader']
+PLUGINS = ['rmd_reader', 'summary', 'sitemap']
 
 ARTICLE_PATHS = ['articles']
 
