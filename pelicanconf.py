@@ -24,8 +24,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('accessinfo.hk', 'http://accessinfo.hk/'),
-         ('webb-site.com', 'http://webb-site.com/'),)
+LINKS = (('accessinfo.hk', 'https://accessinfo.hk/'),
+         ('HK Magazine archive', 'https://hkmag-archive.com'),)
 
 # Social widget
 SOCIAL = (('twitter', 'https://twitter.com/dataguruhk'),
