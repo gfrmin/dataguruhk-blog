@@ -1,6 +1,6 @@
 title: About
 
-My name is Guy Freeman, and I have a PhD in Statistics from the University of Warwick in England, and have worked in both academia and business with different official titles each time, but basically I was a Data Guru: a data scientist who is zealous about data science and using it to solve problems.
+Hi, my name is Guy Freeman. I have a PhD in Statistics from the University of Warwick in England, and have worked in both academia and business with different official titles each time, but basically I was a Data Guru: a data scientist who is zealous about using data science to solve problems.
 
 I am also the founder and maintainer of [accessinfo.hk](https://accessinfo.hk), a Freedom of Information portal for Hong Kong.
 
