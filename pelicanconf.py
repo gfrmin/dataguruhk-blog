@@ -25,8 +25,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('accessinfo.hk', 'https://accessinfo.hk/'),
-         ('HK Magazine archive', 'https://hkmag-archive.com'),)
+LINKS = (('Blog', 'blog'),
+    ('accessinfo.hk', 'https://accessinfo.hk/'),
+    ('HK Magazine archive', 'https://hkmag-archive.com'),)
 
 # Social widget
 SOCIAL = (('twitter', 'https://twitter.com/dataguruhk'),
@@ -53,7 +54,7 @@ DEFAULT_CATEGORY = 'Blog'
 USE_FOLDER_AS_CATEGORY = False
 
 THEME = "theme/Flex"
-MAIN_MENU = True
+MAIN_MENU = False
 
 COPYRIGHT_YEAR = 2016
 CC_LICENSE = { 'name': 'Creative Commons Attribution-ShareAlike', 'version':'4.0', 'slug': 'by-sa' }
