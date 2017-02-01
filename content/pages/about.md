@@ -1,4 +1,6 @@
 title: About
+URL:
+save_as: index.html
 
 Hi, my name is Guy Freeman. I have a PhD in Statistics from the University of Warwick in England, and have worked in both academia and business with different official titles each time, but basically I was a Data Guru: a data scientist who is zealous about using data science to solve problems.
 

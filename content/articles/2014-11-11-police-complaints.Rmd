@@ -10,6 +10,8 @@ library(scales)
 library(knitr)
 library(tidyr)
 library(printr)
+library(DT)
+library(stringr)
 ```
 
 Hong Kong has recently experienced some of the most severe protests in decades, taking place under the moniker of "Umbrella Revolution/Movement". (That calling the protests a "revolution" is considered too extreme by some protesters is testament to the pragmatic and mild nature of most of the protesters). These protests include "occupation" of some public roads in Hong Kong, at Admiralty, Mong Kok and Causeway Bay.
@@ -28,20 +30,24 @@ The data are for 2011/2012 and 2012/2013, and you can get a cleaned version for 
 
 ```{r echo=FALSE,warnings=FALSE,results='hide',messages=FALSE}
 police <- fread("../assets/police.csv")
-police <- police[!grep("total",Result)][`Major Category` != "All"][,!c("Total.2012/13","Total.2011/12"),with=FALSE]
+setnames(police, str_replace_all(names(police), fixed("\\n"), " "))
+police[,c("Total.2012/13","Total.2011/12") := NULL]
+police <- police[!grep("total",Result,ignore.case = TRUE)]
 police <- gather(police, key, number, -Result, -`Major Category`)
-police <- separate(police, key, into=c("Complaint", "Year"), sep="\\.")
-police[,Result := factor(Result, levels = unique(police$Result))] # tidy
-police[,Complaint := factor(Complaint, levels = unique(police$Complaint))] # tidy more
+police <- data.table(separate(police, key, into=c("Complaint", "Year"), sep="\\."))
+police[,Result := factor(Result)]
+police[,Complaint := factor(Complaint)]
 
+policepresent <- police[Year == "2012/13"]
+policepresent[,c("Year","Major Category") := NULL]
 policetotals <- police[Year == "2012/13",sum(number),by=Result]
-policepresent <- copy(spread(police[Year == "2012/13"][,!c("Year","Major Category"),with=FALSE], Complaint, number))
-policepresent[,Total := policetotals$V1]
-policepresent <- rbind(policepresent, policepresent[,lapply(.SD, sum), .SDcols = 2:(ncol(policepresent))], fill = TRUE)
-policepresent[is.na(Result), Result := "Total"]
+policepresent <- copy(spread(policepresent, Result, number))
+#policepresent[,Total := policetotals$V1]
+#policepresent <- rbind(policepresent, policepresent[,lapply(.SD, sum), .SDcols = 2:(ncol(policepresent))], fill = TRUE)
+#policepresent[is.na(Result), Result := "Total"]
 ```
 ```{r echo=FALSE}
-policepresent
+datatable(policepresent)
 ```
 
 It is immediately clear that the vast majority of complaints are not substantiated. Regarding assault complaints in particular, out of 323 complaints only *one* was substantiated in part, and *none* substantiated in full. On the contrary, 273 of the complaints were withdrawn or considered not pursuable! Lastly, 15 were found to be _false_, so that it was considered "there is sufficient reliable evidence to indicate that the allegation made by the complainant is untrue, be it a complaint with clear malicious intent or a complaint which is not based upon genuine conviction or sincere belief but with no element of malice.  When a complaint is classified as “False”, CAPO will consider, in consultation with the Department of Justice as necessary, prosecuting the complainant for misleading a police officer", and 15 more led to a conclusion of "no fault", which means that "the complainant may have misunderstood the facts" or "the complainee was acting under lawful instructions from his superior officer or in accordance with established police practice." So 15 alleged assaults weren't really assaults, or the superior officer ordered the assault? I'm personally rather confused by this.
@@ -55,7 +61,7 @@ police <- fread("../assets/police.csv")
 setnames(police, sapply(names(police), function(x) {gsub("\\n", "\n", x, fixed=TRUE)}))
 police <- police[!grep("total",Result)][`Major Category` != "All"][,!c("Total.2012/13","Total.2011/12"),with=FALSE]
 police <- gather(police, key, number, -Result, -`Major Category`)
-police <- separate(police, key, into=c("Complaint", "Year"), sep="\\.")
+police <- data.table(separate(police, key, into=c("Complaint", "Year"), sep="\\."))
 police[,Result := factor(Result, levels = unique(police$Result))] # tidy
 policeplot <- police[!(Complaint %in% c("Police Procedures", "Other\nOffences"))]
 ```
