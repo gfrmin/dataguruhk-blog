@@ -4,6 +4,8 @@ save_as: index.html
 
 Guy Freeman is a resident for Hong Kong for 6 years. After getting a PhD in Statistics from the University of Warwick in England, he worked in both academia (HKU) and business (DemystData, EY, Prudential) with different official titles each time, but the common theme was that he was a Data Guru: a fan of and expert in using data to solve problems rigorously and efficiently.
 
+Please feel free to also peruse my [LinkedIn profile](https://hk.linkedin.com/in/guyfreemanstat).
+
 Guy is also the founder and maintainer of [accessinfo.hk](https://accessinfo.hk), a Freedom of Information portal for Hong Kong. He was also involved in efforts to archive the now-defunct HK Magazine's content at [hkmag-archive.com](https://hkmag-archive.com).
 
 Please get in touch at [guy@dataguru.hk](mailto:guy@dataguru.hk) or fill in the form below if 
