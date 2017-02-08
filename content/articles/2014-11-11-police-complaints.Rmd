@@ -1,6 +1,6 @@
 Title: Complaints against police in Hong Kong rarely upheld
 Tags: hong kong, police
-Summary: Complaints against police in Hong Kong are rarely upheld.
+Summary: Complaints against the police in Hong Kong are rarely upheld
 
 ```{r echo=FALSE}
 library(methods) 
