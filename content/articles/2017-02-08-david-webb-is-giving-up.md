@@ -1,0 +1,20 @@
+Title: Is David Webb giving up?
+Tags: hong kong, david webb
+Summary: If even David Webb is losing hope about Hong Kong...
+---
+
+Everyone in Hong Kong who has even a passing interest in Open Data or fairness for minority investors in the stock market (and I admit the latter interest might be stronger than the former in this finance-obsessed city) is familiar with David Webb and his punnily-named [webb-site.com](https://webb-site.com). He has kept publihed and maintained, pretty much by himself, a constantly-updated repository of data about Hong Kong companies and other organisations, as well as their officers and other notable people in Hong Kong - verily, as it's self-described, a "Who's Who" of Hong Kong. There are also archived stock exchange memos, important or just plain fascinating court judgements, graphs of how share prices have performed, and best of all, the detailed and incisive commentaries and eminently sensible (if also obvious to anyone not in hock to vested interests) policy recommendations of the man himself. And it's all avaiable for free. That he hasn't received any of the available Olympic-medal-colour editions of the local gong, the Bauhinia Star, just shows how worthless and politicised the award is, and by extension the government that claims to be technocratically superlative at running this special place. (To show how useful webb-site.com itself is, you can use it to see how many Democratic Party politicians have received the Bronze Bauhinia Star using [this link](https://webb-site.com/dbpub/matches.asp?org1=28387&org2=31370). Go and look; I'll wait. And now compare how many from the non-democratic Democratic Alliance for the Betterment and Progress of Hong Kong got it, or indeed how many people from any organisation got it, by clicking [here](https://webb-site.com/dbpub/overlap.asp?p=28387). Magic, right?).
+
+And now Mr. Webb, after almost two decades of running this invaluable resource, is slowly giving up, perhaps. In his email newsletter from two days ago (not available online, as far as I can tell), he gives a cri de coeur, the essence of which I reproduce here:
+
+> Every year at Webb-site, our editorial board, consisting of me, myself and I, takes a look back at whether I am making any real progress with the policy issues I've been pursuing from the top of the system to the bottom, whether it is the governance structure of HK, the increasingly interventionist economic and fiscal policies, laws which inhibit free markets or free speech, or the detailed regulations of our financial markets. I try to push hard on unlocked doors, and not to waste time trying to create doorways in brick walls. Over 18 years of running this publication, I've tried to focus my efforts on issues where a result is, even if unlikely, more probable than others, putting utility above futility and, I hope, those efforts have made a difference.
+> 
+> However, at present, most of these doors are firmly locked and the opportunities for reform in HK are extremely limited.
+
+If even David Webb feels he's not being listened to by almost anyone in the government, and that even obvious reforms are not being enacted, that really should be a wake-up call to those who are still complacent about Hong Kong. As Mr. Webb says,
+
+> But although the draconian option of tighter control of the legislature, strict "national security" legislation and an end to protests and filibustering may appeal to some, it will come at the price of protectionism of vested interests and increased intervention, whether in the form of populist handouts or subsidies of land, make-work schemes or other resources for favoured sectors. Vested interests will take priority over the public interest and economic rationality, and the result will be less optimal.
+
+This situation is not good for anyone who cares about Hong Kong, across the entire political or social spectrum, including Beijing...
+
+Although Mr. Webb will carry on maintaining the website, he will publish fewer articles, and "diverting time to personal interests". This is a sad day for Hong Kong.
