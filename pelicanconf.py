@@ -44,7 +44,7 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images', 'assets']
 
 PLUGIN_PATHS = ['./pelican-plugins']
-PLUGINS = ['rmd_reader', 'summary', 'sitemap', 'feed_summary',]
+PLUGINS = ['rmd_reader', 'summary', 'sitemap', 'feed_summary']
 
 ARTICLE_PATHS = ['articles']
 
