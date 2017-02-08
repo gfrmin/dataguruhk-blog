@@ -6,3 +6,6 @@ _site
 *~
 *.pyc
 output/
+/Makefile
+/develop_server.sh
+/fabfile.py
