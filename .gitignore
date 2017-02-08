@@ -9,3 +9,4 @@ output/
 /Makefile
 /develop_server.sh
 /fabfile.py
+/pelican-plugins/

@@ -43,12 +43,14 @@ DEFAULT_PAGINATION = 10
 
 STATIC_PATHS = ['images', 'assets']
 
-PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['rmd_reader', 'summary', 'sitemap']
+PLUGIN_PATHS = ['./pelican-plugins']
+PLUGINS = ['rmd_reader', 'summary', 'sitemap', 'feed_summary',]
 
 ARTICLE_PATHS = ['articles']
 
 RMD_READER_KNITR_OPTS_CHUNK = {'fig.path': 'assets/'}
+
+FEED_USE_SUMMARY = True
 
 DEFAULT_CATEGORY = 'Blog'
 USE_FOLDER_AS_CATEGORY = False
