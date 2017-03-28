@@ -25,7 +25,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Blog', 'blog'),
+LINKS = (('Blog', '/blog'),
     ('accessinfo.hk', 'https://accessinfo.hk/'),
     ('HK Magazine archive', 'https://hkmag-archive.com'),)
 
