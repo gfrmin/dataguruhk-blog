@@ -58,5 +58,5 @@ USE_FOLDER_AS_CATEGORY = False
 THEME = "theme/Flex"
 MAIN_MENU = False
 
-COPYRIGHT_YEAR = 2016
+COPYRIGHT_YEAR = 2017
 CC_LICENSE = { 'name': 'Creative Commons Attribution-ShareAlike', 'version':'4.0', 'slug': 'by-sa' }
