@@ -1,21 +1,19 @@
-title: About dataguru.hk
-URL:
+title: Hong Kong clean and public data, available as dashboard, email reports or APIs
 save_as: index.html
 
-Guy Freeman has been a resident of Hong Kong for 6 years. After getting a PhD in Statistics from the University of Warwick in England, he worked in both academia (HKU) and business (DemystData, EY, Prudential) in Hong Kong with different official titles each time, but the common theme was that he used data to solve problems rigorously and efficiently.
+Simple dashboards, daily emailed reports or APIs for public Hong Kong data, such as:
 
-Please feel free to also peruse his [LinkedIn profile](https://hk.linkedin.com/in/guyfreemanstat).
+- Hong Kong SFC licences
+- Hong Kong Exchange disclosures of interests
+- Hong Kong registered company data from its Company Registry
+- Hong Kong weather history
+- Hong Kong location and property data
+- Hong Kong horse-racing data
+- any public Hong Kong data you need, dataguru.hk can get for you
 
-Guy is also the founder and maintainer of [accessinfo.hk](https://accessinfo.hk), a Freedom of Information portal for Hong Kong. He was also the creator of an archive of the now-defunct HK Magazine's content at [hkmag-archive.com](https://hkmag-archive.com).
+Get in touch to discuss pricing now, at <a href="mailto:contact@dataguru.hk">contact@dataguru.hk</a> or with the form below:
 
-Please get in touch at [guy@dataguru.hk](mailto:guy@dataguru.hk) or fill in the form below if 
-
-* you have data you want to analyse, understand and/or visualise to make better decisions
-* you want to collect, store and analyse data in a smarter way, including IoT and other operational data
-* you want to learn or use R and/or other data analysis tools yourself
-* you want to develop a data strategy to help meet your goals
-
-<form action="https://formspree.io/guy@dataguru.hk" method="post">
+<form action="https://formspree.io/contact@dataguru.hk" method="post">
       <input class="input" type="text" name="name" placeholder="Your name">
       <input class="input" type="email" name="email" placeholder="Your email">
       <textarea class="input" name="message" placeholder="Your message"></textarea>
